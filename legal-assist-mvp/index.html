@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Assist MVP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <button onclick="showScreen('home')">Home</button>
+        <button onclick="showScreen('chat')">Chat</button>
+        <button onclick="showScreen('tracker')">Case Tracker</button>
+    </nav>
+
+    <!-- Home Screen (Lawyer Matchmaking) -->
+    <section id="home" class="screen active">
+        <h1>Find a Lawyer</h1>
+        <form id="match-form">
+            <label for="case-type">Case Type:</label>
+            <select id="case-type" name="case-type">
+                <option value="fraud">Extortion & Financial Fraud</option>
+                <option value="domestic">Domestic Violence & Abuse</option>
+            </select>
+            <br>
+            <label for="budget">Budget ($):</label>
+            <input type="number" id="budget" name="budget" min="0" placeholder="Enter your budget">
+            <br>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter your city">
+            <br>
+            <button type="submit">Find Lawyer</button>
+        </form>
+        <div id="lawyer-results">
+            <!-- Lawyer matches will appear here -->
+        </div>
+    </section>
+
+    <!-- Chat Screen -->
+    <section id="chat" class="screen">
+        <h1>Chat with Lawyer</h1>
+        <div id="chat-messages">
+            <!-- Messages will appear here -->
+        </div>
+        <form id="chat-form">
+            <input type="text" id="chat-input" placeholder="Type your message">
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Case Tracker Screen -->
+    <section id="tracker" class="screen">
+        <h1>Case Tracker</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Case ID</th>
+                    <th>Status</th>
+                    <th>Last Update</th>
+                </tr>
+            </thead>
+            <tbody id="case-table">
+                <!-- Case data will appear here -->
+            </tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
